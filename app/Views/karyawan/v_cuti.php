@@ -1,4 +1,4 @@
-<?= $this->extend('/layouts/template'); ?>
+<?= $this->extend('/layouts/template_karyawan'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -11,41 +11,48 @@
           </div>
         </div>
 
-        <div class="card-body ms-4">
-          <div class="row md-4">
-            <div class="col-md-2">
-              <div class="form-group">
-                <label for="example-text-input" class="form-control-label">Dari</label>
-                <input class="form-control" type="date">
+        <form action="/permohonan" method="POST">
+          <div class="card-body ms-4">
+            <div class="row md-4">
+              <div class="col-md-2">
+                <div class="form-group">
+                <label for="mulai_cuti" class="form-control-label">Dari</label>
+                <input class="form-control" type="date" id="mulai_cuti" name="mulai_cuti">
               </div>
             </div>
-            <div class="col-md-2 ms-3">
+            <div class="col-md-3">
               <div class="form-group">
-                <label for="example-text-input" class="form-control-label">Sampai</label>
-                <input class="form-control" type="date">
+                <label for="akhir_cuti" class="form-control-label">Sampai</label>
+                <input class="form-control" type="date" id="akhir_cuti" name="akhir_cuti">
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="form-control-label">Jumlah Hari</label>
-              <input class="form-control" type="number">
+              <input class="form-control" type="number" id="durasi_cuti" name="durasi_cuti">
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label class="form-control-label">Jenis Cuti</label>
-              <input class="form-control" type="text">
+              <label for="jenis_cuti" class="form-control-label">Jenis Cuti</label>
+              
+              <select class="form-control dropdown-toggle" name="jenis_cuti" id="jenis_cuti">
+                <option value="" selected disabled>Jenis Cuti</option>
+                <option value="Cuti Tahunan">Cuti Tahunan</option>
+                <option value="Cuti Melahirkan">Cuti Melahirkan</option>
+              </select>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label class="form-control-label">Keterangan/Pesan Tambahan</label>
-              <textarea class="form-control" type="text" maxlength="500"></textarea>
+              <label for="keterangan_cuti" class="form-control-label">Keterangan/Pesan Tambahan</label>
+              <textarea class="form-control" type="text" id="keterangan_cuti" name="keterangan_cuti" maxlength="500"></textarea>
             </div>
           </div>
 
-          <button class="btn btn-primary btn-sm ms-auto d-flex align-items-end">Simpan</button>
+          <button class="btn btn-primary btn-sm ms-auto d-flex align-items-end" type="submit">Simpan</button>
+        </form>
       </div>
     </div>
   </div>

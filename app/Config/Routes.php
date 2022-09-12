@@ -37,8 +37,13 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::index');
+$routes->get('/staff/dashboard', 'Home::staff');
+
 $routes->get('/cuti', 'CutiController::index');
+$routes->post('/permohonan', 'CutiController::permohonan');
+
 $routes->get('/training', 'TrainingController::index');
+$routes->get('/resign', 'ResignController::index');
 
 /*
  * --------------------------------------------------------------------
