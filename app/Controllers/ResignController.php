@@ -10,8 +10,8 @@ class ResignController extends BaseController
     {
         $data = [
             'title' => 'Resign Karyawan',
-            'subtitle' => 'Form Permohonan Resign'
+            'subtitle' => 'Resign Karyawan'
         ];
-        return view('karyawan/v_resign', $data);
+        return view('staffHRD/v_lihatResign', $data);
     }
 }

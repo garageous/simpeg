@@ -9,7 +9,7 @@ class CutiModel extends Model
     // protected $DBGroup          = 'default';
     protected $table            = 'cuti';
     protected $primaryKey       = 'id_cuti';
-    protected $allowedFields    = ['mulai_cuti', 'akhir_cuti', 'jenis_cuti', 'durasi_cuti', 'status_cuti', 'keterangan_cuti', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['mulai_cuti', 'akhir_cuti', 'jenis_cuti', 'durasi_cuti', 'status_cuti', 'keterangan_cuti', 'pesan', 'tgl_konf_cuti', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;

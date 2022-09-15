@@ -38,12 +38,23 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::index');
 $routes->get('/staff/dashboard', 'Home::staff');
+$routes->get('/gm/dashboard', 'Home::gm');
 
 $routes->get('/cuti', 'CutiController::index');
 $routes->post('/permohonan', 'CutiController::permohonan');
+$routes->get('/staff/cuti', 'CutiController::lihatCuti');
+$routes->get('/gm/cuti', 'CutiController::approveCuti');
 
 $routes->get('/training', 'TrainingController::index');
+$routes->get('/staff/training', 'TrainingController::lihatTraining');
+$routes->get('/gm/training', 'TrainingController::lihatTraining');
+
 $routes->get('/resign', 'ResignController::index');
+$routes->get('/staff/resign', 'ResignController::index');
+$routes->get('/gm/resign', 'ResignController::index');
+
+$routes->get('/staff/mutasi', 'MutasiController::index');
+$routes->get('/gm/mutasi', 'MutasiController::index');
 
 /*
  * --------------------------------------------------------------------

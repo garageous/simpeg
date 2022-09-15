@@ -30,4 +30,13 @@ class Home extends BaseController
         ];
         return view('staffHRD/v_dashboardStaff', $data);
     }
+
+    public function gm()
+    {
+        $data = [
+            'title' => 'SIMPEG',
+            'subtitle' => 'Dashboard'
+        ];
+        return view('gm/v_dashboardGM', $data);
+    }
 }

@@ -1,0 +1,102 @@
+/* Style the sidebar - fixed full height */
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+/* Card */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+.card-custom {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  width: 300px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.card-header-custom {
+  width: 100%;
+  height: fit-content;
+  /* object-fit: cover; */
+  background-color: #f5f5f5;
+}
+.card-body-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 238px;
+}
+.box-keterangan {
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  border-color: #d9d9d9;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.box-keterangan-header {
+  padding: 5px;
+  width: 100%;
+  height: fit-content;
+  background-color: #f5f5f5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.box-keterangan-body {
+  padding: 10px;
+  min-height: 238px;
+}
+.no-resize {
+  resize: none;
+  width: 100%;
+}
+.no-border {
+  border: 0 none #fff;
+  overflow: hidden;
+  outline: none;
+}

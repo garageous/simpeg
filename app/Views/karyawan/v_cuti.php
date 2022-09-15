@@ -20,7 +20,7 @@
                 <input class="form-control" type="date" id="mulai_cuti" name="mulai_cuti">
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="form-group">
                 <label for="akhir_cuti" class="form-control-label">Sampai</label>
                 <input class="form-control" type="date" id="akhir_cuti" name="akhir_cuti">
@@ -47,7 +47,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="keterangan_cuti" class="form-control-label">Keterangan/Pesan Tambahan</label>
-              <textarea class="form-control" type="text" id="keterangan_cuti" name="keterangan_cuti" maxlength="500"></textarea>
+              <textarea class="form-control no-resize" type="text" id="keterangan_cuti" name="keterangan_cuti" maxlength="500"></textarea>
             </div>
           </div>
 

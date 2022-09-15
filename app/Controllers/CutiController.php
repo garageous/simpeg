@@ -82,4 +82,26 @@ class CutiController extends BaseController
             return redirect()->to(base_url('/'))->withInput()->with('validation', $this->validator);
         }
     }
+
+    public function lihatCuti()
+    {
+        $cuti = $this->CutiModel->findAll();
+        $data = [
+            'title' => 'Cuti Karyawan',
+            'subtitle' => 'Home',
+            'tabelCuti' => $cuti
+        ];
+        return view('staffHRD/v_lihatCuti', $data);
+    }
+    
+    public function approveCuti()
+    {
+        $cuti = $this->CutiModel->findAll();
+        $data = [
+            'title' => 'Cuti Karyawan',
+            'subtitle' => 'Home',
+            'tabelCuti' => $cuti
+        ];
+        return view('gm/v_approveCuti', $data);
+    }
 }
