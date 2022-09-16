@@ -10,10 +10,11 @@
           <div class="col-2">
             <img src="/argon/assets/img/team-2.jpg" class="rounded-circle avatar avatar-sm me-3">
           </div>
-          <div class="col-6 mt-1">
+          <div class="col-6">
             <div class="row">
               <p class="card-title text-xs mb-0">Laudia</p>
               <p class="text-xs">Creative Designer</p>
+              <p class="text-xs">20022348</p>
             </div>
           </div>
           <div class="col-4 mt-2">

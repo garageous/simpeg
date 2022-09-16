@@ -11,6 +11,16 @@ class Home extends BaseController
         $this->CutiModel = new CutiModel();
     }
 
+    public function oretan()
+    {
+        $data = [
+            'title' => 'SIMPEG',
+            'subtitle' => 'Dashboard',
+            // 'tabelCuti' => $cuti
+        ];
+        return view('otak-atik', $data);
+    }
+
     public function index()
     {
         $cuti = $this->CutiModel->findAll();
