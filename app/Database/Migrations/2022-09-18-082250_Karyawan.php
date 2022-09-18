@@ -18,6 +18,7 @@ class Karyawan extends Migration
             'username' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'unique' => true,
             ],
             'password' => [
                 'type' => 'VARCHAR',
@@ -111,6 +112,7 @@ class Karyawan extends Migration
             'email' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'unique' => true,
             ],
             'no_telp' => [
                 'type' => 'VARCHAR',

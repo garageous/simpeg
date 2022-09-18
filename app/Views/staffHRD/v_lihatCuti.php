@@ -35,10 +35,16 @@
                 <td><?= $id_cuti; ?></td>
                 <td>nama_kr</td>
                 <td><?= $dataCuti['jenis_cuti']; ?></td>
-                <td><?= $dataCuti['mulai_cuti']; $dataCuti['akhir_cuti']; ?></td>
-                <td>tgl diajukan</td>
+                <td>
+                  <?= date('d/m/Y', strtotime($dataCuti['mulai_cuti']));
+                  date('d/m/Y', strtotime($dataCuti['akhir_cuti'])); ?>
+                </td>
+                <td><?= date('d/m/Y', strtotime($dataCuti['created_at'])); ?></td>
                 <td><?= $dataCuti['status_cuti']; ?></td>
-                <td>AKSI</td>
+                <td>
+                  <button type="button" class="btn btn-outline-info btn-sm">Detail</button>
+                  <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
+                </td>
               </tr>
 
               <?php endforeach ?>
