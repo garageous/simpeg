@@ -35,6 +35,20 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+$routes->get('/create-db', function(){
+    $forge = \Config\Database::forge();
+    if ($forge->createDatabase('simpeg')) {
+        echo 'Database created!';
+    }
+});
+$routes->get('/delete-db', function(){
+    $forge = \Config\Database::forge();
+    if ($forge->dropDatabase('simpeg')) {
+        echo 'Database deleted!';
+    }
+});
+
 $routes->get('/oretan', 'Home::oretan');
 
 $routes->get('/', 'Home::index');
