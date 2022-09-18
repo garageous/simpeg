@@ -5526,6 +5526,7 @@ fieldset:disabled .btn {
   --bs-breadcrumb-padding-x: 1rem;
   --bs-breadcrumb-padding-y: 0.5rem;
   --bs-breadcrumb-margin-bottom: 1rem;
+  --bs-breadcrumb-margin-left: 1rem;
   --bs-breadcrumb-bg: #e9ecef;
   --bs-breadcrumb-border-radius: 0.5rem;
   --bs-breadcrumb-divider-color: #6c757d;
@@ -5535,6 +5536,7 @@ fieldset:disabled .btn {
   flex-wrap: wrap;
   padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
   margin-bottom: var(--bs-breadcrumb-margin-bottom);
+  margin-left: var(--bs-breadcrumb-margin-left);
   font-size: var(--bs-breadcrumb-font-size);
   list-style: none;
   background-color: var(--bs-breadcrumb-bg);

@@ -39,7 +39,7 @@
         <li>
           <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'dashboard' ? 'active' : '' ?>" href="/gm/dashboard">
             <iconify-icon class="icon" icon="akar-icons:desktop-device" style="color: #884ffb;" width="20" height="20"></iconify-icon>
-            <span class="item">Dashboard</span>
+            <span class="text-sm">Dashboard</span>
           </a>
         </li>
         <li>
@@ -47,25 +47,25 @@
             <iconify-icon class="icon" icon="ic:outline-free-breakfast" style="color: #0086e7;" width="20" height="20"></iconify-icon>
 
             <!-- <span class="icon"><i class="fas fa-desktop"></i></span> -->
-            <span class="item">Cuti</span>
+            <span class="text-sm">Cuti</span>
           </a>
         </li>
         <li>
           <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'training' ? 'active' : '' ?>" href="/gm/training">
             <iconify-icon class="icon" icon="healthicons:i-training-class-outline" style="color: #ffd233;" width="20" height="20"></iconify-icon>
-            <span class="item">Training</span>
+            <span class="text-sm">Training</span>
           </a>
         </li>
         <li>
           <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'mutasi' ? 'active' : '' ?>" href="/gm/mutasi">
             <iconify-icon class="icon" icon="ci:transfer" style="color: #0fa958;" width="20" height="20"></iconify-icon>
-            <span class="item">Mutasi</span>
+            <span class="text-sm">Mutasi</span>
           </a>
         </li>
         <li>
           <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'resign' ? 'active' : '' ?>" href="/gm/resign">
             <iconify-icon class="icon" icon="majesticons:door-exit-line" style="color: #ff3389;" width="20" height="20"></iconify-icon>
-            <span class="item">Resign</span>
+            <span class="text-sm">Resign</span>
           </a>
         </li>
       </ul>
@@ -75,115 +75,107 @@
       <!-- Navbar -->
       <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
         <div class="container-fluid py-1 px-0">
-          <div class="row">
-            <div class="col-md-1">
-              <div class="hamburger">
-                <a href="#">
-                  <i class="fas fa-bars"></i>
-                </a>
+          <div class="hamburger">
+            <a href="#">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
+          <nav aria-label="breadcrumb">
+            <h6 class="breadcrumb bg-transparent text-white mb-0 pb-0 pt-1 px-0 me-sm-6 me-5"><?= $title ?></h6>
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+              <li class="breadcrumb-item text-xs"><a class="text-white" href="javascript:;">Pages</a></li>
+              <li class="breadcrumb-item text-xs text-white active" aria-current="page"><?= $subtitle ?></li>
+            </ol>
+          </nav>
+          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+              <div class="input-group">
+                <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
               </div>
+
             </div>
-            <div class="col-md-5">
-              <nav aria-label="breadcrumb">
-                <h6 class="font-weight-bolder text-white mb-0"><?= $title ?></h6>
-                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                  <li class="breadcrumb-item text-xs"><a class="text-white" href="javascript:;">Pages</a></li>
-                  <li class="breadcrumb-item text-xs text-white active" aria-current="page"><?= $subtitle ?></li>
-                </ol>
-              </nav>
-            </div>
-            <div class="col-md-6">
-              <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                  <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                  </div>
-    
-                </div>
-    
-                <ul class="navbar-nav  justify-content-end">
-                  <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa fa-bell cursor-pointer"></i>
+
+            <ul class="navbar-nav  justify-content-end">
+              <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-bell cursor-pointer"></i>
+                </a>
+                <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="my-auto">
+                          <img src="/argon/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            <span class="font-weight-bold">New message</span> from Laur
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            13 minutes ago
+                          </p>
+                        </div>
+                      </div>
                     </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                      <li class="mb-2">
-                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                          <div class="d-flex py-1">
-                            <div class="my-auto">
-                              <img src="/argon/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="text-sm font-weight-normal mb-1">
-                                <span class="font-weight-bold">New message</span> from Laur
-                              </h6>
-                              <p class="text-xs text-secondary mb-0">
-                                <i class="fa fa-clock me-1"></i>
-                                13 minutes ago
-                              </p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="mb-2">
-                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                          <div class="d-flex py-1">
-                            <div class="my-auto">
-                              <img src="/argon/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="text-sm font-weight-normal mb-1">
-                                <span class="font-weight-bold">New album</span> by Travis Scott
-                              </h6>
-                              <p class="text-xs text-secondary mb-0">
-                                <i class="fa fa-clock me-1"></i>
-                                1 day
-                              </p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item border-radius-md" href="javascript:;">
-                          <div class="d-flex py-1">
-                            <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                              <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <title>credit-card</title>
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                  <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                    <g transform="translate(1716.000000, 291.000000)">
-                                      <g transform="translate(453.000000, 454.000000)">
-                                        <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                        <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                      </g>
-                                    </g>
+                  </li>
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="my-auto">
+                          <img src="/argon/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            <span class="font-weight-bold">New album</span> by Travis Scott
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            1 day
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                          <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>credit-card</title>
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                <g transform="translate(1716.000000, 291.000000)">
+                                  <g transform="translate(453.000000, 454.000000)">
+                                    <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
+                                    <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
                                   </g>
                                 </g>
-                              </svg>
-                            </div>
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="text-sm font-weight-normal mb-1">
-                                Payment successfully completed
-                              </h6>
-                              <p class="text-xs text-secondary mb-0">
-                                <i class="fa fa-clock me-1"></i>
-                                2 days
-                              </p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
+                              </g>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            Payment successfully completed
+                          </h6>
+                          <p class="text-xs text-secondary mb-0">
+                            <i class="fa fa-clock me-1"></i>
+                            2 days
+                          </p>
+                        </div>
+                      </div>
+                    </a>
                   </li>
                 </ul>
-    
-                <div class="navbar-nav  ps-3 justify-content-end">
-                  <a href="javascript:;">
-                    <img src="/argon/assets/img/team-2.jpg" class="rounded-circle avatar avatar-sm me-3">
-                  </a>
-                </div>
-              </div>
+              </li>
+            </ul>
+
+            <div class="navbar-nav  ps-3 justify-content-end">
+              <a href="javascript:;">
+                <img src="/argon/assets/img/team-2.jpg" class="rounded-circle avatar avatar-sm me-3">
+              </a>
             </div>
           </div>
         </div>
@@ -193,6 +185,109 @@
       <?= $this->renderSection('content'); ?>
     </div>
   </div>
+
+  <!--   Core JS Files   -->
+  <script src="/argon/assets/js/core/popper.min.js"></script>
+  <script src="/argon/assets/js/core/bootstrap.min.js"></script>
+  <script src="/argon/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/argon/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="/argon/assets/js/plugins/chartjs.min.js"></script>
+  <script>
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Mobile apps",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
+
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/argon/assets/js/argon-dashboard.min.js?v=2.0.3"></script>
 
   <!-- Sidebar -->
   <script>
