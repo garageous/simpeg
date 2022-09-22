@@ -51,6 +51,8 @@ $routes->get('/delete-db', function(){
 
 $routes->get('/oretan', 'Home::oretan');
 
+$routes->get('/login', 'Home::login');
+
 $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::index');
 $routes->get('/staff/dashboard', 'Home::staff');

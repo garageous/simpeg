@@ -303,6 +303,21 @@
   <!-- icon -->
   <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
 
+  <!-- Image Preview -->
+  <script>
+    function previewImg() {
+      const foto = document.querySelector('#foto'); //#foto itu berarti pake id='foto' yang ada di form
+      const imgPreview = document.querySelector('.img-preview');
+
+      // Membaca file yang baru diupload
+      const fileFoto = new FileReader();
+      fileFoto.readAsDataURL(foto.files[0]);
+
+      fileFoto.onload = function(e) {
+        imgPreview.src = e.target.result;
+      }
+    }
+  </script>
 </body>
 
 </html>

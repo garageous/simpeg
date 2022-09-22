@@ -174,67 +174,84 @@ class Karyawan extends Migration
             'nama_saudara' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'jk_saudara' => [
                 'type' => 'VARCHAR',
                 'constraint' => '2',
+                'null' => true,
             ],
             'dob_saudara' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'pend_saudara' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'job_saudara' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'nama_pasangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'jk_pasangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '2',
+                'null' => true,
             ],
             'dob_pasangan' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'pend_pasangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'job_pasangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'nama_anak' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'jk_anak' => [
                 'type' => 'VARCHAR',
                 'constraint' => '2',
+                'null' => true,
             ],
             'dob_anak' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'pend_anak' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'job_anak' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'jenjang' => [
                 'type' => 'VARCHAR',
                 'constraint' => '3',
+                'null' => true,
             ],
             'nama_sekolah' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'jurusan' => [
                 'type' => 'VARCHAR',
@@ -255,90 +272,113 @@ class Karyawan extends Migration
             'jenis_kursus' => [
                 'type' => 'VARCHAR',
                 'constraint' => '150',
+                'null' => true,
             ],
             'thn_kursus' => [
                 'type' => 'VARCHAR',
                 'constraint' => '4',
+                'null' => true,
             ],
             'durasi_kursus' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'ijazah_kursus' => [
                 'type' => 'TEXT',
+                'null' => true,
             ],
             'bahasa' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'bahasa' => [
                 'type' => 'VARCHAR',
                 'constraint' => '10',
+                'null' => true,
             ],
             'tertulis' => [
                 'type' => 'VARCHAR',
                 'constraint' => '12',
+                'null' => true,
             ],
             'lisan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '12',
+                'null' => true,
             ],
             'baca' => [
                 'type' => 'VARCHAR',
                 'constraint' => '12',
+                'null' => true,
             ],
             'nama_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'bidang_usaha' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'email_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
+                'null' => true,
             ],
             'telp_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '20',
+                'null' => true,
             ],
             'prov_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'kota_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'kec_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'kel_perusahaan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'alamat_perusahaan' => [
                 'type' => 'TEXT',
+                'null' => true,
             ],
             'dari_lastjob' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'sampai_lastjob' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'jabatan_lastjob' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+                'null' => true,
             ],
             'gaji_lastjob' => [
                 'type' => 'VARCHAR',
                 'constraint' => '20',
+                'null' => true,
             ],
             'tunjangan_lastjob' => [
                 'type' => 'VARCHAR',
                 'constraint' => '20',
+                'null' => true,
             ],
             'bonus_lastjob' => [
                 'type' => 'VARCHAR',
@@ -357,15 +397,19 @@ class Karyawan extends Migration
             ],
             'jobdesk_lastjob' => [
                 'type' => 'TEXT',
+                'null' => true,
             ],
             'resign_lastjob' => [
                 'type' => 'TEXT',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'updated_at' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
         ]);
         $this->forge->addKey('id_karyawan', true);

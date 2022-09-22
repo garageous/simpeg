@@ -21,6 +21,14 @@ class Home extends BaseController
         return view('otak-atik', $data);
     }
 
+    public function login()
+    {
+        $data = [
+            'title' => 'Login'
+        ];
+        return view('v_login', $data);
+    }
+
     public function index()
     {
         $cuti = $this->CutiModel->findAll();

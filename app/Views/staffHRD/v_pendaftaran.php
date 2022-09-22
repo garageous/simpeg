@@ -1,4 +1,4 @@
-<?= $this->extend('/layouts/template_karyawan'); ?>
+<?= $this->extend('/layouts/template_staff'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -11,75 +11,88 @@
         </div>
       </div>
 
-      <form action="/staff/store" method="POST">
+      <form action="/staff/store" method="POST" enctype="multipart/form-data">
         <!-- fungsi csrf biar kalo mau isi form cmn bisa disini -->
         <?= csrf_field(); ?>
         <div class="card-body ms-4">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="nama_karyawan" class="form-control-label">Nama</label>
-                <input class="form-control <?= ($validation->hasError('nama_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nama_karyawan" name="nama_karyawan" value="<?= old('nama_karyawan'); ?>">
-                <div class="invalid-feedback">
-                  <?= $validation->getError('nama_karyawan') ?>
+        <div class="row">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nama_karyawan" class="form-control-label">Nama</label>
+                    <input class="form-control <?= ($validation->hasError('nama_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nama_karyawan" name="nama_karyawan" value="<?= old('nama_karyawan'); ?>">
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('nama_karyawan') ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nama_panggilan" class="form-control-label">Nama Panggilan</label>
+                    <input class="form-control <?= ($validation->hasError('nama_panggilan')) ? 'is-invalid': ''; ?>" type="text" id="nama_panggilan" name="nama_panggilan" value="<?= old('nama_panggilan'); ?>">
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('nama_panggilan') ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nik_karyawan" class="form-control-label">NIK</label>
+                    <input class="form-control <?= ($validation->hasError('nik_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nik_karyawan" name="nik_karyawan" value="<?= old('nik_karyawan'); ?>">
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('nik_karyawan') ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="posisi" class="form-control-label">Posisi</label>
+                    <input class="form-control <?= ($validation->hasError('posisi')) ? 'is-invalid': ''; ?>" type="text" id="posisi" name="posisi" value="<?= old('posisi'); ?>">
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('posisi') ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="departemen" class="form-control-label">Departemen</label>
+                    <input class="form-control <?= ($validation->hasError('departemen')) ? 'is-invalid': ''; ?>" type="text" id="departemen" name="departemen" value="<?= old('departemen'); ?>">
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('departemen') ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="status_karyawan" class="form-control-label">Status</label>
+                    <select class="form-control dropdown-toggle <?= ($validation->hasError('status_karyawan')) ? 'is-invalid': ''; ?>" name="status_karyawan" id="status_karyawan" value="<?= old('status_karyawan'); ?>">
+                    <!-- gabisa old nya -->
+                      <option value="" selected disabled>Select</option>
+                      <option value="Karyawan Tetap">Karyawan Tetap</option>
+                      <option value="Karyawan Kontrak">Karyawan Kontrak</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      <?= $validation->getError('status_karyawan') ?>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- Foto -->
             <div class="col-md-4">
               <div class="form-group">
-                <label for="nama_panggilan" class="form-control-label">Nama Panggilan</label>
-                <input class="form-control <?= ($validation->hasError('nama_panggilan')) ? 'is-invalid': ''; ?>" type="text" id="nama_panggilan" name="nama_panggilan" value="<?= old('nama_panggilan'); ?>">
+                <label for="foto" class="form-control-label">Foto</label>
+                <div class="container">
+                  <img src="/assets/img/default-pfp.jpg" class="img-thumbnail img-preview mb-2">
+                  <input class="form-control <?= ($validation->hasError('foto')) ? 'is-invalid': ''; ?>" type="file" id="foto" name="foto" value="<?= old('foto'); ?>" onchange="previewImg()">
+                </div>
                 <div class="invalid-feedback">
-                  <?= $validation->getError('nama_panggilan') ?>
+                  <?= $validation->getError('foto') ?>
                 </div>
               </div>
             </div>
-            
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="nik_karyawan" class="form-control-label">NIK</label>
-                <input class="form-control <?= ($validation->hasError('nik_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nik_karyawan" name="nik_karyawan" value="<?= old('nik_karyawan'); ?>">
-                <div class="invalid-feedback">
-                  <?= $validation->getError('nik_karyawan') ?>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="posisi" class="form-control-label">Posisi</label>
-                <input class="form-control <?= ($validation->hasError('posisi')) ? 'is-invalid': ''; ?>" type="text" id="posisi" name="posisi" value="<?= old('posisi'); ?>">
-                <div class="invalid-feedback">
-                  <?= $validation->getError('posisi') ?>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="departemen" class="form-control-label">Departemen</label>
-                <input class="form-control <?= ($validation->hasError('departemen')) ? 'is-invalid': ''; ?>" type="text" id="departemen" name="departemen" value="<?= old('departemen'); ?>">
-                <div class="invalid-feedback">
-                  <?= $validation->getError('departemen') ?>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="status_karyawan" class="form-control-label">Status</label>
-                <select class="form-control dropdown-toggle <?= ($validation->hasError('status_karyawan')) ? 'is-invalid': ''; ?>" name="status_karyawan" id="status_karyawan" value="<?= old('status_karyawan'); ?>">
-                <!-- gabisa old nya -->
-                  <option value="" selected disabled>Select</option>
-                  <option value="Karyawan Tetap">Karyawan Tetap</option>
-                  <option value="Karyawan Kontrak">Karyawan Kontrak</option>
-                </select>
-                <div class="invalid-feedback">
-                  <?= $validation->getError('status_karyawan') ?>
-                </div>
-              </div>
-            </div>
+            <!-- End of Foto -->
           </div>
           <div class="row">
             <div class="col-md-4">

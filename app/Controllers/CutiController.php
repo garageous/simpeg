@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\CutiModel;
+use DateTime;
 
 class CutiController extends BaseController
 {
@@ -17,7 +18,8 @@ class CutiController extends BaseController
     {
         $data = [
             'title' => 'Cuti Karyawan',
-            'subtitle' => 'Form Permohonan Cuti'
+            'subtitle' => 'Form Permohonan Cuti',
+            'validation' => \Config\Services::validation(),
         ];
         return view('karyawan/v_cuti', $data);
     }
@@ -29,28 +31,21 @@ class CutiController extends BaseController
                 "label" => "mulai_cuti",
                 "rules" => "required",
                 "errors" => [
-                    "required" => "{field} harus diisi!"
+                    "required" => "Tidak boleh kosong"
                 ]
             ],
             "akhir_cuti" => [
                 "label" => "akhir_cuti",
                 "rules" => "required",
                 "errors" => [
-                    "required" => "{field} harus diisi!"
-                ]
-            ],
-            "durasi_cuti" => [
-                "label" => "durasi_cuti",
-                "rules" => "required",
-                "errors" => [
-                    "required" => "{field} harus diisi!"
+                    "required" => "Tidak boleh kosong"
                 ]
             ],
             "jenis_cuti" => [
                 "label" => "jenis_cuti",
                 "rules" => "required",
                 "errors" => [
-                    "required" => "{field} harus diisi!"
+                    "required" => "Tidak boleh kosong"
                 ]
             ],
             "keterangan_cuti" => [
@@ -62,16 +57,17 @@ class CutiController extends BaseController
             ]
         ]);
 
-        // $mulai_cuti = 'mulai_cuti';
-        // $akhir_cuti = 'akhir_cuti';
-        // $durasi_cuti = date_diff($mulai_cuti, $akhir_cuti);
+        // Hitung Durasi Cuti
+        $date1 = new DateTime($this->request->getVar('mulai_cuti'));
+        $date2 = new DateTime($this->request->getVar('akhir_cuti'));
+        $durasi_cuti = date_diff($date1, $date2)->format("%a");
 
         if ($valid) {
             $data = [
                 'mulai_cuti' => $this->request->getVar('mulai_cuti'),
                 'akhir_cuti' => $this->request->getVar('akhir_cuti'),
                 'jenis_cuti' => $this->request->getVar('jenis_cuti'),
-                'durasi_cuti' => $this->request->getVar('durasi_cuti'),
+                'durasi_cuti' => $durasi_cuti,
                 'keterangan_cuti' => $this->request->getVar('keterangan_cuti'),
             ];
             $CutiModel = model("CutiModel");
@@ -79,7 +75,7 @@ class CutiController extends BaseController
             return redirect()->to(base_url('/dashboard'));
         }        
         else {
-            return redirect()->to(base_url('/'))->withInput()->with('validation', $this->validator);
+            return redirect()->to(base_url('/cuti'))->withInput()->with('validation', $this->validator);
         }
     }
 
