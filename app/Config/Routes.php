@@ -56,6 +56,10 @@ $routes->get('/dashboard', 'Home::index');
 $routes->get('/staff/dashboard', 'Home::staff');
 $routes->get('/gm/dashboard', 'Home::gm');
 
+$routes->get('/staff/pendaftaran', 'AkunController::staff');
+$routes->post('/staff/store', 'AkunController::store');
+
+
 $routes->get('/cuti', 'CutiController::index');
 $routes->post('/permohonan', 'CutiController::permohonan');
 $routes->get('/staff/cuti', 'CutiController::lihatCuti');

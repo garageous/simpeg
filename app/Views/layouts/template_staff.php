@@ -21,6 +21,9 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/custom-style.css" rel="stylesheet" />
   <link id="pagestyle" href="/argon/assets/css/argon-dashboard.css?v=2.0.3" rel="stylesheet" />
+  
+  <!-- Wilayah -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  -->
 
 </head>
 
@@ -299,6 +302,7 @@
 
   <!-- icon -->
   <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+
 </body>
 
 </html>

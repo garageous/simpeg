@@ -23,6 +23,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/custom-style.css" rel="stylesheet" />
   <link id="pagestyle" href="/argon/assets/css/argon-dashboard.css?v=2.0.3" rel="stylesheet" />
+  <!-- Wilayah -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
 </head>
 
@@ -231,21 +233,33 @@
                   <h6 class="mb-2">Data Cuti</h6>
                 </div>
               </div>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class="text-xs" align="center">
-                    <th>NO.</th>
-                    <th>NAMA</th>
-                    <th>POSISI</th>
-                    <th>UNIT KERJA</th>
-                  </thead>
+              <div class="card-body ms-4">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="d-flex justify-content-between py-2">
+                      <p class="text-sm mb-0">Alamat KTP</p>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="prov_kr" class="form-control-label">Provinsi</label>
+                        <select class="form-control dropdown-toggle" name="prov_kr" id="prov_kr">
+                          <option value="" selected disabled>Select</option>
+                          <option value="<?= $wilayah['kode']; ?>"><?= $wilayah['nama']; ?></option>
 
-                  <tbody class="text-xs" align="center">
-
-
-
-                  </tbody>
-                </table>
+                          
+                          <?php 
+                          $daerah = mysqli_query($koneksi,"SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                          while($d = mysqli_fetch_array($daerah)){
+                            ?>
+                            <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
+                            <?php 
+                          }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -36,8 +36,9 @@
                 <td>nama_kr</td>
                 <td><?= $dataCuti['jenis_cuti']; ?></td>
                 <td>
-                  <?= date('d/m/Y', strtotime($dataCuti['mulai_cuti']));
-                  date('d/m/Y', strtotime($dataCuti['akhir_cuti'])); ?>
+                  <?= date('d/m/Y', strtotime($dataCuti['mulai_cuti']));?>
+                  -
+                  <?= date('d/m/Y', strtotime($dataCuti['akhir_cuti'])); ?>
                 </td>
                 <td><?= date('d/m/Y', strtotime($dataCuti['created_at'])); ?></td>
                 <td><?= $dataCuti['status_cuti']; ?></td>

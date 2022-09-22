@@ -18,7 +18,7 @@ class Karyawan extends Migration
             'username' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
-                'unique' => true,
+                // 'unique' => true,
             ],
             'password' => [
                 'type' => 'VARCHAR',
@@ -32,6 +32,9 @@ class Karyawan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '20',
             ],
+            'foto' => [
+                'type' => 'TEXT',
+            ],
             'nik_karyawan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '16',
@@ -44,7 +47,7 @@ class Karyawan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
-            'status_karyawwan' => [
+            'status_karyawan' => [
                 'type' => 'VARCHAR',
                 'constraint' => '20',
             ],
@@ -245,6 +248,10 @@ class Karyawan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '4',
             ],
+            'thn_lulus' => [
+                'type' => 'VARCHAR',
+                'constraint' => '4',
+            ],
             'jenis_kursus' => [
                 'type' => 'VARCHAR',
                 'constraint' => '150',
@@ -353,6 +360,12 @@ class Karyawan extends Migration
             ],
             'resign_lastjob' => [
                 'type' => 'TEXT',
+            ],
+            'created_at' => [
+                'type' => 'DATE',
+            ],
+            'updated_at' => [
+                'type' => 'DATE',
             ],
         ]);
         $this->forge->addKey('id_karyawan', true);
