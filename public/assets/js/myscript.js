@@ -2,9 +2,9 @@ const flashData = $(".flash-data").data("flashdata");
 
 // console.log(flashData);
 if (flashData) {
-  Swal({
+  Swal.fire({
     title: "Data berhasil" + flashData,
     text: "",
-    type: "success",
+    icon: "success",
   });
 }

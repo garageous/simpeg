@@ -47,11 +47,10 @@
       </div>
     </div>
   </div>
-
   <?php if(session()->getFlashdata('flash')): ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       Data berhasil <strong><?= session()->getFlashdata('flash') ?></strong>.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><iconify-icon icon="eva:close-outline" style="color: white;" width="18"></iconify-icon></button>
     </div>
   <?php endif; ?>
 

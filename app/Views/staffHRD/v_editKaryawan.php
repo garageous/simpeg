@@ -1,3 +1,7 @@
+<?php
+
+use App\Database\Migrations\Karyawan;
+?>
 <?= $this->extend('/layouts/template_staff'); ?>
 
 <?= $this->section('content'); ?>
@@ -11,7 +15,7 @@
         </div>
       </div>
 
-      <form action="/staff/store" method="POST" enctype="multipart/form-data">
+      <form action="/staff/update/<?= $karyawan['id_karyawan'];?>" method="POST" enctype="multipart/form-data">
         <!-- fungsi csrf biar kalo mau isi form cmn bisa disini -->
         <?= csrf_field(); ?>
         <div class="card-body ms-4">
@@ -21,7 +25,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nama_karyawan" class="form-control-label">Nama</label>
-                    <input class="form-control <?= ($validation->hasError('nama_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nama_karyawan" name="nama_karyawan" value="<?= old('nama_karyawan'); ?>">
+                    <input class="form-control <?= ($validation->hasError('nama_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nama_karyawan" name="nama_karyawan" value="<?= $karyawan['nama_karyawan'];?>">
                     <div class="invalid-feedback">
                       <?= $validation->getError('nama_karyawan') ?>
                     </div>
@@ -30,7 +34,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nama_panggilan" class="form-control-label">Nama Panggilan</label>
-                    <input class="form-control <?= ($validation->hasError('nama_panggilan')) ? 'is-invalid': ''; ?>" type="text" id="nama_panggilan" name="nama_panggilan" value="<?= old('nama_panggilan'); ?>">
+                    <input class="form-control <?= ($validation->hasError('nama_panggilan')) ? 'is-invalid': ''; ?>" type="text" id="nama_panggilan" name="nama_panggilan" value="<?= $karyawan['nama_panggilan'];?>">
                     <div class="invalid-feedback">
                       <?= $validation->getError('nama_panggilan') ?>
                     </div>
@@ -39,7 +43,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nik_karyawan" class="form-control-label">NIK</label>
-                    <input class="form-control <?= ($validation->hasError('nik_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nik_karyawan" name="nik_karyawan" value="<?= old('nik_karyawan'); ?>">
+                    <input class="form-control <?= ($validation->hasError('nik_karyawan')) ? 'is-invalid': ''; ?>" type="text" id="nik_karyawan" name="nik_karyawan" value="<?= $karyawan['nik_karyawan'];?>">
                     <div class="invalid-feedback">
                       <?= $validation->getError('nik_karyawan') ?>
                     </div>
@@ -48,7 +52,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="posisi" class="form-control-label">Posisi</label>
-                    <input class="form-control <?= ($validation->hasError('posisi')) ? 'is-invalid': ''; ?>" type="text" id="posisi" name="posisi" value="<?= old('posisi'); ?>">
+                    <input class="form-control <?= ($validation->hasError('posisi')) ? 'is-invalid': ''; ?>" type="text" id="posisi" name="posisi" value="<?= $karyawan['posisi'];?>">
                     <div class="invalid-feedback">
                       <?= $validation->getError('posisi') ?>
                     </div>
@@ -57,7 +61,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="departemen" class="form-control-label">Departemen</label>
-                    <input class="form-control <?= ($validation->hasError('departemen')) ? 'is-invalid': ''; ?>" type="text" id="departemen" name="departemen" value="<?= old('departemen'); ?>">
+                    <input class="form-control <?= ($validation->hasError('departemen')) ? 'is-invalid': ''; ?>" type="text" id="departemen" name="departemen" value="<?= $karyawan['departemen'];?>">
                     <div class="invalid-feedback">
                       <?= $validation->getError('departemen') ?>
                     </div>
@@ -66,9 +70,9 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="status_karyawan" class="form-control-label">Status</label>
-                    <select class="form-control dropdown-toggle <?= ($validation->hasError('status_karyawan')) ? 'is-invalid': ''; ?>" name="status_karyawan" id="status_karyawan" value="<?= old('status_karyawan'); ?>">
+                    <select class="form-control dropdown-toggle <?= ($validation->hasError('status_karyawan')) ? 'is-invalid': ''; ?>" name="status_karyawan" id="status_karyawan">
                     <!-- gabisa old nya -->
-                      <option value="" selected disabled>Select</option>
+                      <option value="<?= $karyawan['status_karyawan'];?>" selected disabled></option>
                       <option value="Karyawan Tetap">Karyawan Tetap</option>
                       <option value="Karyawan Kontrak">Karyawan Kontrak</option>
                     </select>

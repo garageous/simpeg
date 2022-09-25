@@ -6338,13 +6338,13 @@ fieldset:disabled .btn {
     center/1em auto no-repeat;
   border: 0;
   border-radius: 0.375rem;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .btn-close:hover {
   color: #fff;
   text-decoration: none;
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .btn-close:focus {
