@@ -129,9 +129,11 @@
     }
   </script>
 
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
   <!-- Alert/Pop up -->
-  <script src="<?= base_url(); ?>assets/js/sweetalert2.all.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/myscript.js"></script>
+  <script src="/assets/js/sweetalert2.all.min.js"></script>
+  <script src="/assets/js/myscript.js"></script>
 
   <!-- Tambah data -->
   <script>

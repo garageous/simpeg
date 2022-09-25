@@ -476,7 +476,7 @@ class AkunController extends BaseController
             'password' => $password
         ]);
 
-        session()->setFlashdata('flash', 'disimpan.');
+        session()->setFlashdata('flash', 'disimpan');
         return redirect()->to(base_url('/staff/dashboard'));
     }
 

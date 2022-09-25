@@ -4,16 +4,13 @@
 
 <div class="container-fluid py-4">
   <div class="flash-data" data-flashdata="<?= session()->getFlashdata('flash') ?>"></div>
-  <?php if(session()->getFlashdata('flash')): ?>
-    
-  <?php endif; ?>
   <div class="row">
     <div class="col-xl-3 col-sm-2 mb-3">
       <div class="card">
         <div class="card-body p-3">
+          <p class="text-sm mb-0"><strong>JUMLAH KARYAWAN</strong></p>
           <div class="row">
             <div class="col-md-8">
-              <p class="text-sm mb-0"><strong>JUMLAH KARYAWAN</strong></p>
               <h2><?= countData('karyawan'); ?></h2>
             </div>
             <div class="col-md-4">
@@ -21,7 +18,7 @@
                 <i class="fa fa-user text-lg opacity-10" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="col">
+            <div class="col mt-1">
               <!-- <a type="button" href="/staff/pendaftaran" class="btn btn-custom align-middle">
                 <iconify-icon inline icon="ant-design:plus-circle-outlined" style="color: #5e72e4;" width="25"></iconify-icon>
                 Pendaftaran Karyawan
@@ -35,9 +32,9 @@
     <div class="col-xl-3 col-sm-2 mb-4">
       <div class="card">
         <div class="card-body p-3">
+          <p class="text-sm mb-0"><strong>JUMLAH DEPARTEMEN</strong></p>
           <div class="row">
             <div class="col-md-8">
-              <p class="text-sm mb-0"><strong>JUMLAH DEPARTEMEN</strong></p>
               <h2>14</h2>
             </div>
             <div class="col-md-4">
@@ -50,6 +47,13 @@
       </div>
     </div>
   </div>
+
+  <?php if(session()->getFlashdata('flash')): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      Data berhasil <strong><?= session()->getFlashdata('flash') ?></strong>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <?php endif; ?>
 
   <!-- Tabel -->
   <div class="row">

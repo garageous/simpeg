@@ -618,7 +618,7 @@
           <div class="row px-2">
             <div class="col-md-2">
               <div class="form-group">
-                <label for="jenjang" class="form-control-label" value="<?= old('jenjang'); ?>">Jenjang</label>
+                <label for="jenjang" class="form-control-label <?= ($validation->hasError('jenjang')) ? 'is-invalid': ''; ?>" value="<?= old('jenjang'); ?>">Jenjang</label>
                 <select class="form-control dropdown-toggle" name="jenjang" id="jenjang">
                   <option value="" selected disabled>Select</option>
                   <option value="SD">SD</option>
@@ -630,31 +630,31 @@
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <label for="nama_sekolah" class="form-control-label">Nama Lembaga Pendidikan</label>
+                <label for="nama_sekolah" class="form-control-label <?= ($validation->hasError('nama_sekolah')) ? 'is-invalid': ''; ?>">Nama Lembaga Pendidikan</label>
                 <input class="form-control" type="text" id="nama_sekolah" name="nama_sekolah" value="<?= old('nama_sekolah'); ?>">
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
-                <label for="jurusan" class="form-control-label">Jurusan</label>
+                <label for="jurusan" class="form-control-label <?= ($validation->hasError('jurusan')) ? 'is-invalid': ''; ?>">Jurusan</label>
                 <input class="form-control" type="text" id="jurusan" name="jurusan" value="<?= old('jurusan'); ?>">
               </div>
             </div>
             <div class="col-md-1">
               <div class="form-group">
-                <label for="gpa" class="form-control-label">GPA</label>
+                <label for="gpa" class="form-control-label <?= ($validation->hasError('gpa')) ? 'is-invalid': ''; ?>">GPA</label>
                 <input class="form-control" type="text" id="gpa" name="gpa" value="<?= old('gpa'); ?>">
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
-                <label for="thn_masuk" class="form-control-label">Tahun Masuk</label>
+                <label for="thn_masuk" class="form-control-label <?= ($validation->hasError('thn_masuk')) ? 'is-invalid': ''; ?>">Tahun Masuk</label>
                 <input class="form-control" type="text" id="thn_masuk" name="thn_masuk" value="<?= old('thn_masuk'); ?>">
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
-                <label for="thn_lulus" class="form-control-label">Tahun Lulus</label>
+                <label for="thn_lulus" class="form-control-label <?= ($validation->hasError('thn_lulus')) ? 'is-invalid': ''; ?>">Tahun Lulus</label>
                 <input class="form-control" type="text" id="thn_lulus" name="thn_lulus" value="<?= old('thn_lulus'); ?>">
               </div>
             </div>
