@@ -57,14 +57,21 @@ $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::index');
 $routes->get('/staff/dashboard', 'Home::staff');
 $routes->get('/gm/dashboard', 'Home::gm');
+$routes->get('/HRD/dashboard', 'Home::hrd');
 
 $routes->get('/staff/pendaftaran', 'AkunController::staff');
 $routes->post('/staff/store', 'AkunController::store');
+$routes->get('/staff/data-karyawan/(:any)', 'AkunController::detailKaryawan/$1');
+$routes->get('/staff/edit-karyawan/(:any)', 'AkunController::editKaryawan/$1');
 
+$routes->get('/struktur', 'StrukturController::index');
+$routes->post('/tambah-struktur', 'StrukturController::store');
+$routes->get('/posisi', 'PosisiController::index');
 
 $routes->get('/cuti', 'CutiController::index');
 $routes->post('/permohonan', 'CutiController::permohonan');
 $routes->get('/staff/cuti', 'CutiController::lihatCuti');
+$routes->get('/staff/detail-cuti/(:any)', 'CutiController::detailCuti/$1');
 $routes->get('/gm/cuti', 'CutiController::approveCuti');
 
 $routes->get('/training', 'TrainingController::index');

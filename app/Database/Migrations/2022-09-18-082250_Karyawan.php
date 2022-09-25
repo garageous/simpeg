@@ -32,6 +32,10 @@ class Karyawan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '20',
             ],
+            'nomor_karyawan' => [
+                'type' => 'VARCHAR',
+                'constraint' => '20',
+            ],
             'foto' => [
                 'type' => 'TEXT',
             ],
@@ -44,6 +48,10 @@ class Karyawan extends Migration
                 'constraint' => '50',
             ],
             'departemen' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            'unit_kerja' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],

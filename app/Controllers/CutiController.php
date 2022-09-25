@@ -89,6 +89,17 @@ class CutiController extends BaseController
         ];
         return view('staffHRD/v_lihatCuti', $data);
     }
+
+    public function detailCuti($id)
+    {
+        $cuti = $this->CutiModel->where('id_cuti', $id)->first();
+        $data = [
+            'title' => 'Cuti Karyawan',
+            'subtitle' => 'Detail Cuti',
+            'tabelCuti' => $cuti
+        ];
+        return view('staffHRD/v_detailCuti', $data);
+    }
     
     public function approveCuti()
     {

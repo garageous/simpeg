@@ -7,7 +7,7 @@
     <div class="card">
       <div class="card-header pb-0 p-3">
         <div class="d-flex justify-content-between py-2 ms-2">
-          <h6 class="mb-2">Pendaftaran Karyawan</h6>
+          <h6 class="mb-2">Edit Data Karyawan</h6>
         </div>
       </div>
 

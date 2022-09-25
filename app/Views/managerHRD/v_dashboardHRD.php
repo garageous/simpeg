@@ -1,19 +1,15 @@
-<?= $this->extend('/layouts/template_staff'); ?>
+<?= $this->extend('/layouts/template_managerHRD'); ?>
 
 <?= $this->section('content'); ?>
 
 <div class="container-fluid py-4">
-  <div class="flash-data" data-flashdata="<?= session()->getFlashdata('flash') ?>"></div>
-  <?php if(session()->getFlashdata('flash')): ?>
-    
-  <?php endif; ?>
   <div class="row">
     <div class="col-xl-3 col-sm-2 mb-3">
       <div class="card">
         <div class="card-body p-3">
           <div class="row">
             <div class="col-md-8">
-              <p class="text-sm mb-0"><strong>JUMLAH KARYAWAN</strong></p>
+              <p class="text-xs">JUMLAH KARYAWAN</p>
               <h2><?= countData('karyawan'); ?></h2>
             </div>
             <div class="col-md-4">
@@ -37,7 +33,7 @@
         <div class="card-body p-3">
           <div class="row">
             <div class="col-md-8">
-              <p class="text-sm mb-0"><strong>JUMLAH DEPARTEMEN</strong></p>
+              <p class="text-xs">JUMLAH DEPARTEMEN</p>
               <h2>14</h2>
             </div>
             <div class="col-md-4">
@@ -93,11 +89,10 @@
                   </div>
                 </td>
                 <td class="text-center"><?= $dataKaryawan['posisi']; ?></td>
-                <td class="text-center"><strong>PT ABC</strong><br><?= $dataKaryawan['unit_kerja']; ?></td>
+                <td class="text-center">PT ABC<?= $dataKaryawan['unit_kerja']; ?></td>
                 <td class="text-center">
-                  <a href="/staff/data-karyawan/<?= $dataKaryawan['id_karyawan']; ?>" class="btn btn-outline-info btn-sm">Detail</a>
-                  <a href="/staff/edit-karyawan/<?= $dataKaryawan['id_karyawan']; ?>" class="btn btn-outline-success btn-sm">Edit</a>
-                 
+                  <button type="button" class="btn btn-outline-info btn-sm" onclick="window.location='<?= site_url('staff/data-karyawan/' . $dataKaryawan['id_karyawan']) ?>'">Detail</button>
+                  <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
                 </td>
               </tr>
 

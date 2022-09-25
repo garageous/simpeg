@@ -21,6 +21,9 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/custom-style.css" rel="stylesheet" />
   <link id="pagestyle" href="/argon/assets/css/argon-dashboard.css?v=2.0.3" rel="stylesheet" />
+  
+  <!-- Wilayah -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  -->
 
 </head>
 
@@ -37,29 +40,23 @@
 
       <ul>
         <li>
-          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'dashboard' ? 'active' : '' ?>" href="/dashboard">
+          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'dashboard' ? 'active' : '' ?>" href="/HRD/dashboard">
             <iconify-icon class="icon" icon="akar-icons:desktop-device" style="color: #884ffb;" width="20" height="20"></iconify-icon>
             <span class="text-sm">Dashboard</span>
           </a>
         </li>
         <li>
-          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'cuti' ? 'active' : '' ?>" href="/cuti">
-            <iconify-icon class="icon" icon="ic:outline-free-breakfast" style="color: #0086e7;" width="20" height="20"></iconify-icon>
+          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'struktur' ? 'active' : '' ?>" href="/struktur">
+            <iconify-icon class="icon" icon="carbon:data-structured" style="color: #0086e7;" width="20" height="20"></iconify-icon>
 
             <!-- <span class="icon"><i class="fas fa-desktop"></i></span> -->
-            <span class="text-sm">Cuti</span>
+            <span class="text-sm">Struktur Organisasi</span>
           </a>
         </li>
         <li>
-          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'training' ? 'active' : '' ?>" href="/training">
-            <iconify-icon class="icon" icon="healthicons:i-training-class-outline" style="color: #ffd233;" width="20" height="20"></iconify-icon>
-            <span class="text-sm">Training</span>
-          </a>
-        </li>
-        <li>
-          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'resign' ? 'active' : '' ?>" href="/resign">
-            <iconify-icon class="icon" icon="majesticons:door-exit-line" style="color: #ff3389;" width="20" height="20"></iconify-icon>
-            <span class="text-sm">Resign</span>
+          <a class="<?= \Config\Services::request()->uri->getSegment(1) == 'posisi' ? 'active' : '' ?>" href="#">
+            <iconify-icon class="icon" icon="uil:game-structure" style="color: #ffd233;" width="20" height="20"></iconify-icon>
+            <span class="text-sm">Posisi</span>
           </a>
         </li>
       </ul>
@@ -181,3 +178,6 @@
   </div>
 
   <?= $this->extend('/layouts/footer'); ?>
+</body>
+
+</html>

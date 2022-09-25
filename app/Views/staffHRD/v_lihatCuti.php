@@ -43,7 +43,7 @@
                 <td><?= date('d/m/Y', strtotime($dataCuti['created_at'])); ?></td>
                 <td><?= $dataCuti['status_cuti']; ?></td>
                 <td>
-                  <button type="button" class="btn btn-outline-info btn-sm">Detail</button>
+                  <button type="button" class="btn btn-outline-info btn-sm" onclick="window.location='<?= site_url('staff/detail-cuti/' . $dataCuti['id_cuti']) ?>'">Detail</button>
                   <button type="button" class="btn btn-outline-success btn-sm">Edit</button>
                 </td>
               </tr>

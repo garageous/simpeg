@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\KaryawanModel;
 use App\Models\WilayahModel;
+use DateTime;
 
 class AkunController extends BaseController
 {
@@ -70,6 +71,13 @@ class AkunController extends BaseController
             ],
             "departemen" => [
                 "label" => "departemen",
+                "rules" => "required",
+                "errors" => [
+                    "required" => "Tidak boleh kosong!"
+                ]
+            ],
+            "unit_kerja" => [
+                "label" => "unit_kerja",
                 "rules" => "required",
                 "errors" => [
                     "required" => "Tidak boleh kosong!"
@@ -353,8 +361,13 @@ class AkunController extends BaseController
             return redirect()->to(base_url('/staff/pendaftaran'))->withInput();
         }
 
+        // Generate nomor karyawan
+        $tglLahir = date('Ymd', strtotime($this->request->getVar('tgl_lahir')));
+        $tglJoin = date('Ym', $this->request->getVar('created_at'));
+        $nomor_karyawan = $tglLahir . $tglJoin;
+        
         // Generate Username & Password
-        $username =  strstr($this->request->getVar('email'), '@', true) . $this->request->getVar('id_karyawan');
+        $username =  strstr($this->request->getVar('email'), '@', true) . $tglJoin;
         $password = $username . '_1234';
 
         // Ambil gambar
@@ -364,20 +377,21 @@ class AkunController extends BaseController
             $namaFoto = 'default-pfp.jpg';
         } else {
             // pindahkan file ke folder img
-            $fileFoto->move('/assets/img');
+            $fileFoto->move('img');
             // ambil nama gambar
             $namaFoto = $fileFoto->getName();            
         }
 
 
         $this->KaryawanModel->save([
-            'id_karyawan' => $this->request->getVar('id_karyawan'),
             'nama_karyawan' => $this->request->getVar('nama_karyawan'),
             'nama_panggilan' => $this->request->getVar('nama_panggilan'),
+            'nomor_karyawan' => $nomor_karyawan,
             'foto' => $namaFoto,
             'nik_karyawan' => $this->request->getVar('nik_karyawan'),
             'posisi' => $this->request->getVar('posisi'),
             'departemen' => $this->request->getVar('departemen'),
+            'unit_kerja' => $this->request->getVar('unit_kerja'),
             'status_karyawan' => $this->request->getVar('status_karyawan'),
             'tempat_lahir' => $this->request->getVar('tempat_lahir'),
             'tgl_lahir' => $this->request->getVar('tgl_lahir'),
@@ -462,6 +476,28 @@ class AkunController extends BaseController
             'password' => $password
         ]);
 
+        session()->setFlashdata('flash', 'disimpan.');
         return redirect()->to(base_url('/staff/dashboard'));
+    }
+
+    public function detailKaryawan($id_karyawan)
+    {
+        $data = [
+            'title' => 'Data Karyawan',
+            'subtitle' => 'Profil Karyawan',
+            'karyawan' => $this->KaryawanModel->getKaryawan($id_karyawan)
+        ];
+        return view('staffHRD/v_detailKaryawan', $data);
+    }
+
+    public function editKaryawan($id_karyawan)
+    {
+        $data = [
+            'title' => 'Data Karyawan',
+            'subtitle' => 'Edit Data Karyawan',
+            'karyawan' => $this->KaryawanModel->getKaryawan($id_karyawan),
+            'validation' => \Config\Services::validation(),
+        ];
+        return view('staffHRD/v_editKaryawan', $data);
     }
 }
