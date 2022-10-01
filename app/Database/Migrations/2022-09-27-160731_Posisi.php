@@ -41,7 +41,7 @@ class Posisi extends Migration
 
     public function down()
     {
+        $this->forge->dropForeignKey('posisi', 'posisi_id_bagian_foreign');
         $this->forge->dropTable('posisi');
-
     }
 }

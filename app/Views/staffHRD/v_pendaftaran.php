@@ -396,11 +396,11 @@
               <div class="form-group">
                 <label class="form-control-label <?= ($validation->hasError('jk_ayah')) ? 'is-invalid': ''; ?>" value="<?= old('jk_ayah'); ?>">Jenis Kelamin</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_ayah1" name="jk_ayah" value="Perempuan">
+                  <input class="form-check-input" type="radio" id="jk_ayah1" name="jk_ayah" value="P">
                   <label for="jk_ayah1">P</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_ayah2" name="jk_ayah" value="Laki-Laki">
+                  <input class="form-check-input" type="radio" id="jk_ayah2" name="jk_ayah" value="L">
                   <label for="jk_ayah2">L</label>
                 </div>
                 <div class="invalid-feedback">
@@ -450,11 +450,11 @@
               <div class="form-group">
                 <label class="form-control-label <?= ($validation->hasError('jk_ibu')) ? 'is-invalid': ''; ?>" value="<?= old('jk_ibu'); ?>">Jenis Kelamin</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_ibu1" name="jk_ibu" value="Perempuan">
+                  <input class="form-check-input" type="radio" id="jk_ibu1" name="jk_ibu" value="P">
                   <label for="jk_ibu1">P</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_ibu2" name="jk_ibu" value="Laki-Laki">
+                  <input class="form-check-input" type="radio" id="jk_ibu2" name="jk_ibu" value="L">
                   <label for="jk_ibu2">L</label>
                 </div>
                 <div class="invalid-feedback">
@@ -501,11 +501,11 @@
               <div class="form-group">
                 <label class="form-control-label" value="<?= old('jk_saudara'); ?>">Jenis Kelamin</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_saudara1" name="jk_saudara" value="Perempuan">
+                  <input class="form-check-input" type="radio" id="jk_saudara1" name="jk_saudara" value="P">
                   <label for="jk_saudara1">P</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_saudara2" name="jk_saudara" value="Laki-Laki">
+                  <input class="form-check-input" type="radio" id="jk_saudara2" name="jk_saudara" value="L">
                   <label for="jk_saudara2">L</label>
                 </div>
               </div>
@@ -540,11 +540,11 @@
               <div class="form-group">
                 <label class="form-control-label" value="<?= old('jk_pasangan'); ?>">Jenis Kelamin</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_pasangan1" name="jk_pasangan" value="Perempuan">
+                  <input class="form-check-input" type="radio" id="jk_pasangan1" name="jk_pasangan" value="P">
                   <label for="jk_pasangan1">P</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_pasangan2" name="jk_pasangan" value="Laki-Laki">
+                  <input class="form-check-input" type="radio" id="jk_pasangan2" name="jk_pasangan" value="L">
                   <label for="jk_pasangan2">L</label>
                 </div>
               </div>
@@ -579,11 +579,11 @@
               <div class="form-group">
                 <label class="form-control-label" value="<?= old('jk_anak'); ?>">Jenis Kelamin</label><br>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_anak1" name="jk_anak" value="Perempuan">
+                  <input class="form-check-input" type="radio" id="jk_anak1" name="jk_anak" value="P">
                   <label for="jk_anak1">P</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="jk_anak2" name="jk_anak" value="Laki-Laki">
+                  <input class="form-check-input" type="radio" id="jk_anak2" name="jk_anak" value="L">
                   <label for="jk_anak2">L</label>
                 </div>
               </div>

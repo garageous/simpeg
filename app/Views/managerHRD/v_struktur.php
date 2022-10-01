@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <form action="/tambah-struktur" method="POST" id="tambah_struktur">
+      <form action="/tambah-struktur" method="POST" class="tambah_struktur">
         <?= csrf_field(); ?>
         <div class="card-body ms-4">
           <div class="col-md-4">
@@ -35,12 +35,12 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="nama_bagian" class="form-control-label <?= ($validation->hasError('nama_bagian')) ? 'is-invalid': ''; ?>">Bagian</label>
-              <input class="form-control <?= ($validation->hasError('nama_bagian')) ? 'is-invalid': ''; ?>" type="text" id="nama_bagian" name="nama_bagian">
+              <input class="form-control <?= ($validation->hasError('nama_bagian')) ? 'is-invalid': ''; ?>" type="text" id="nama_bagian" name="nama_bagian[]">
               <div class="invalid-feedback">
                 <?= $validation->getError('nama_bagian') ?>
               </div>
             </div>
-            <button type="submit" class="btn btn-outline-light btn-sm" id="tambah_data" name="tambah_data">Tambah Data</button>
+            <button type="button" class="btn btn-outline-light btn-sm btntambah_data">Tambah Data</button>
           </div>          
           <button class="btn btn-primary btn-sm ms-auto d-flex align-items-end" type="submit">Simpan</button>
       </form>

@@ -29,88 +29,53 @@ class StrukturController extends BaseController
 
     public function store()
     {
-        // $valid = $this->validate([
-        //     "nama_so" => [
-        //         "label" => "nama_so",
-        //         "rules" => "required",
-        //         "errors" => [
-        //             "required" => "Tidak boleh kosong"
-        //         ]
-        //     ],
-        //     "jumlah_bagian" => [
-        //         "label" => "jumlah_bagian",
-        //         "rules" => "required|numeric",
-        //         "errors" => [
-        //             "required" => "Tidak boleh kosong",
-        //             "numeric" => "Tidak valid"
-        //         ]
-        //     ],
-        // ]);
+        if (!$this->validate([
+            "nama_so" => [
+                "label" => "nama_so",
+                "rules" => "required",
+                "errors" => [
+                    "required" => "Tidak boleh kosong"
+                ]
+            ],
+            "jumlah_bagian" => [
+                "label" => "jumlah_bagian",
+                "rules" => "required",
+                "errors" => [
+                    "required" => "Tidak boleh kosong"
+                ]
+            ]
+        ])) {
+            return redirect()->to(base_url('/struktur'))->withInput();
+        }
 
-        // if ($valid) {
-        //     $dataBagian =[
-        //         'nama_bagian' => $this->request->getVar('nama_bagian')
-        //     ];
-        //     $BagianModel = model("BagianModel");
-        //     $BagianModel->insert($dataBagian);
-
-        //     $id_bagian = $this->BagianModel->insertID();
-        //     $dataStruktur = [
-        //         'nama_so' => $this->request->getVar('nama_so'),
-        //         'jumlah_bagian' => $this->request->getVar('jumlah_bagian'),
-        //         'id_bagian' => $id_bagian,
-        //     ];
-        //     $StrukturModel = model("StrukturModel");
-        //     $StrukturModel->insert($dataStruktur);
-
-        //     return redirect()->to(base_url('/HRD/dashboard'));
-        // }        
-        // else {
-        //     return redirect()->to(base_url('/struktur'))->withInput()->with('validation', $this->validator);
-        // }
-
-        // if (!$this->validate([
-        //     "nama_so" => [
-        //         "label" => "nama_so",
-        //         "rules" => "required",
-        //         "errors" => [
-        //             "required" => "Tidak boleh kosong"
-        //         ]
-        //     ],
-        //     "jumlah_bagian" => [
-        //         "label" => "jumlah_bagian",
-        //         "rules" => "required",
-        //         "errors" => [
-        //             "required" => "Tidak boleh kosong"
-        //         ]
-        //     ]
-        // ])) {
-        //     return redirect()->to(base_url('/struktur'))->withInput();
-        // }
-
-        // $this->BagianModel->save([
-        //     'nama_bagian' => $this->request->getVar('nama_bagian')
-        // ]);
-
-        // $id_bagian = $this->BagianModel->insertID();
-        // $this->StrukturModel->save([
-        //     'nama_so' => $this->request->getVar('nama_so'),
-        //     'jumlah_bagian' => $this->request->getVar('jumlah_bagian'),
-        //     'id_bagian' => $id_bagian
-        // ]);
-
-
-        $dataBagian = ['nama_bagian' => $this->request->getVar('nama_bagian')];
-        $this->BagianModel->insert($dataBagian);
-
-        $id_bagian = $this->BagianModel->insertID();
-        $dataStruktur = [
+        $this->StrukturModel->save([
             'nama_so' => $this->request->getVar('nama_so'),
-            'jumlah_bagian' => $this->request->getVar('jumlah_bagian'),
-            'id_bagian' => $id_bagian
-        ];
-        $this->StrukturModel->insert($dataStruktur);
+            'jumlah_bagian' => $this->request->getVar('jumlah_bagian')
+        ]);
 
+        $id_so = $this->StrukturModel->insertID();
+        $this->BagianModel->save([
+            'nama_bagian' => $this->request->getVar('nama_bagian'),
+            'id_so' => $id_so
+        ]);
+
+        session()->setFlashdata('flash', 'disimpan');
         return redirect()->to(base_url('/HRD/dashboard'));
     }
+
+    // public function formtambah_data()
+    // {
+    //     if ($this->request->isAJAX()) {
+            
+    //     }
+    //     $tambah_struktur = $this->request->getVar('nama_bagian');
+
+    //     $count_data = count($tambah_struktur);
+        
+    //     for ($i=0; $i < $count_data; $i++) { 
+    //         $this->BagianModel->save([
+    //             'nama_bagian' => $tambah_struktur[$i],
+    //         ]);
+    //     }
+    // }
 }

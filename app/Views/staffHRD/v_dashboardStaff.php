@@ -35,7 +35,7 @@
           <p class="text-sm mb-0"><strong>JUMLAH DEPARTEMEN</strong></p>
           <div class="row">
             <div class="col-md-8">
-              <h2>14</h2>
+              <h2><?= countData('bagian'); ?></h2>
             </div>
             <div class="col-md-4">
               <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">

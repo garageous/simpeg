@@ -147,7 +147,7 @@ class Karyawan extends Migration
             ],
             'jk_ayah' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '1',
             ],
             'dob_ayah' => [
                 'type' => 'DATE',
@@ -166,7 +166,7 @@ class Karyawan extends Migration
             ],
             'jk_ibu' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '1',
             ],
             'dob_ibu' => [
                 'type' => 'DATE',
@@ -186,7 +186,7 @@ class Karyawan extends Migration
             ],
             'jk_saudara' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '1',
                 'null' => true,
             ],
             'dob_saudara' => [
@@ -210,7 +210,7 @@ class Karyawan extends Migration
             ],
             'jk_pasangan' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '1',
                 'null' => true,
             ],
             'dob_pasangan' => [
@@ -234,7 +234,7 @@ class Karyawan extends Migration
             ],
             'jk_anak' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '1',
                 'null' => true,
             ],
             'dob_anak' => [
@@ -250,32 +250,6 @@ class Karyawan extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '50',
                 'null' => true,
-            ],
-            'jenjang' => [
-                'type' => 'VARCHAR',
-                'constraint' => '3',
-                'null' => true,
-            ],
-            'nama_sekolah' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
-                'null' => true,
-            ],
-            'jurusan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '50',
-            ],
-            'gpa' => [
-                'type' => 'FLOAT',
-                'constraint' => '4',
-            ],
-            'thn_masuk' => [
-                'type' => 'VARCHAR',
-                'constraint' => '4',
-            ],
-            'thn_lulus' => [
-                'type' => 'VARCHAR',
-                'constraint' => '4',
             ],
             'jenis_kursus' => [
                 'type' => 'VARCHAR',

@@ -9,5 +9,5 @@ class BagianModel extends Model
     // protected $DBGroup          = 'default';
     protected $table            = 'bagian';
     protected $primaryKey       = 'id_bagian';
-    protected $allowedFields    = ['nama_bagian'];
+    protected $allowedFields    = ['nama_bagian', 'id_so'];
 }

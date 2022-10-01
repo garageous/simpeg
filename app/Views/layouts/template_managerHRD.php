@@ -306,6 +306,25 @@
       }
     }
   </script>
+
+  <!-- Tambah Data -->
+  <script>
+    $(document).ready(function(e){
+      $('.btntambah_data').click(function(e) {
+        e.preventDefault();
+
+        $('.tambah_struktur').append(`
+          <div class="form-group">
+            <input class="form-control <?= ($validation->hasError('nama_bagian')) ? 'is-invalid': ''; ?>" type="text" id="nama_bagian" name="nama_bagian[]">
+            <div class="invalid-feedback">
+              <?= $validation->getError('nama_bagian') ?>
+            </div>
+          </div>
+        `);
+      });
+    });
+    
+  </script>
 </body>
 
 </html>
