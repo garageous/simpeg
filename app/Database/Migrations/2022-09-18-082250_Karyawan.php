@@ -15,6 +15,11 @@ class Karyawan extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'id_role' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'username' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
@@ -210,14 +215,16 @@ class Karyawan extends Migration
             'updated_at' => [
                 'type' => 'DATE',
                 'null' => true,
-            ],
+            ]
         ]);
         $this->forge->addKey('id_karyawan', true);
+        $this->forge->addForeignKey('id_role', 'roles', 'id_role');
         $this->forge->createTable('karyawan');
     }
 
     public function down()
     {
+        $this->forge->dropForeignKey('karyawan', 'karyawan_id_role_foreign');
         $this->forge->dropTable('karyawan');
     }
 }

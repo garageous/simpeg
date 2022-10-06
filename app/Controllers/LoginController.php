@@ -24,6 +24,8 @@ class LoginController extends BaseController
 
     public function loginProcess()
     {
-        
+        $data = $this->request->getVar('username');
+        // $user = $
+        session()->setFlashdata('error', 'Username tidak ditemukan.');
     }
 }
