@@ -42,6 +42,11 @@ class Cuti extends Migration
             'tgl_konf_cuti' => [
                 'type' => 'DATE',
             ],
+            'id_karyawan' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'created_at' => [
                 'type' => 'DATE',
             ],
@@ -50,11 +55,13 @@ class Cuti extends Migration
             ],
         ]);
         $this->forge->addKey('id_cuti', true);
+        $this->forge->addForeignKey('id_karyawan', 'karyawan', 'id_karyawan');
         $this->forge->createTable('cuti');
     }
 
     public function down()
     {
+        $this->forge->dropForeignKey('cuti', 'cuti_id_karyawan_foreign');
         $this->forge->dropTable('cuti');
     }
 }

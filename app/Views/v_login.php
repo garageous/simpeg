@@ -47,19 +47,25 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>Register with</h5>
+              <h5>Login</h5>
             </div>
             <div class="card-body">
-              <form role="form">
+              <form role="form" method="POST" action="/loginProcess">
+              <?= csrf_field(); ?>
+              <?php if(session()->getFlashdata('error')) : ?>
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <?= session()->getFlashdata('error') ?>
+                </div>
+              <?php endif; ?>
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                  <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                  <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password">
                 </div>
                 <p class="text-sm mt-3 mb-0">Lupa password?</p>
                 <div class="text-center">
-                  <button href="/dashboard" type="button" class="btn btn-dark my-4 mb-2">Login</button>
+                  <button type="submit" class="btn btn-dark my-4 mb-2">Login</button>
                 </div>
               </form>
             </div>
